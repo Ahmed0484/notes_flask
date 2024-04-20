@@ -17,38 +17,36 @@
 
     </header>
     <main class="main">
-        <div class="container">
-            <section class="left">
-                <h1 >Add Note</h1>
-                <form class="form"  method="POST">
-                   <p class="form__input">
-                    <textarea class="form__textarea" name="note" 
-                    id="note" aria-label="Enter contents" placeholder="Add note here..."  ></textarea>
-                   </p>
-                    <button class="form__submit" type="submit">Save</button>
-                </form>
-            </section>
-            <section class="right bgother">
-                <h1 >Recent Notes</h1>
-                {% if num > 0 %}
-                {% for n in notes %}
-                <article class="note">
-                    <div>
-                        <h2 class="note__title">{{n[0] | truncate(30,True)}}</h2>
-                        <time class="note__time" datetime="{{n[1]}}">| {{n[2]}}</time>
-                    </div>
-                    <p class="note__content">
-                        {{n[0]}}
-                    </p>
-                </article>
-                {% endfor %}
-                {% else %}
-                <h2> no notes ! </h2>
-               
-                {% endif %}
+        <section>
+            <h1 >Add Note</h1>
+            <form class="form"  method="POST">
+               <p class="form__input">
+                <textarea class="form__textarea" name="note" 
+                id="note" aria-label="Enter contents" placeholder="Add note here..."  ></textarea>
+               </p>
+                <button class="form__submit" type="submit">Save</button>
+            </form>
+        </section>
+        <section>
+            <h1 >Recent Notes</h1>
+            {% if num > 0 %}
+            {% for n in notes %}
+            <article class="note">
+                <div>
+                    <h2 class="note__title">{{n[0] | truncate(30,True)}}</h2>
+                    <time class="note__time" datetime="{{n[1]}}">| {{n[2]}}</time>
+                </div>
+                <p class="note__content">
+                    {{n[0]}}
+                </p>
+            </article>
+            {% endfor %}
+            {% else %}
+            <h2> no notes ! </h2>
+           
+            {% endif %}
 
-            </section>
-        </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__content">

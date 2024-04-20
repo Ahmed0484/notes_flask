@@ -1,5 +1,5 @@
 html {
-    font-family: Lato,sans-serif;
+    font-family: Lato;
 }
 
 *,
@@ -16,13 +16,13 @@ body {
 
 .navbar {
     max-width: 640px;
-    margin: 25px auto;
+    margin: 50px auto;
     padding: 0 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 24px;
-    border-bottom:4px solid  #4b7bb2 ;
+    border-bottom:4px solid  #464096 ;
 }
 
 .navbar__brand {
@@ -53,16 +53,10 @@ body {
 }
 
 .main {
-    max-width: 640px;
+    max-width: 450px;
     margin: 0 auto;
     padding: 0 20px;
- 
 }
-.container{
-    display: flex;
-    flex-direction: row;
-}
-
 
 .form{
     display: flex;
@@ -85,7 +79,7 @@ body {
 }
 
 .form__submit{
-    background-color:  #4b7bb2;
+    background-color: #5a54a5;
     border: none;
     border-radius: 20px;
     font-size: 18px;
@@ -96,11 +90,11 @@ body {
 }
 
 .form__submit:hover{
-    background-color: #18c1e1;
+    background-color: #aba7ea;
 }
 
 .note{
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .note__title{
@@ -118,9 +112,10 @@ body {
 }
 
 .footer{
-    background-color: #24405c;
+    background-color: #464096;
     padding: 40px 0;
     margin: 50px 0 0 0;
+    
     color: white;
     font-size: 12px;
 }
@@ -134,16 +129,14 @@ body {
 
 .left{
     display: flex;
-    flex-direction:column;
-    width: 230px;
-   
+    flex-direction: column;
+    flex-grow: 2;
 }
 
 .right{
     display: flex;
-    flex-direction:column;
-    margin-left: 10px;
-    width: 430px;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
 .footer__column{
@@ -160,10 +153,4 @@ body {
 
 .footer__item:hover{
     text-decoration: underline;
-}
-
-.bgother{
-    background-color:#d6e5e5;
-    padding: 5px;
-    border-radius: 10px;
 }
