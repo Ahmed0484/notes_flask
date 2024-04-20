@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes app</title>
+    <link rel="stylesheet" href="/static/styles.css"
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <img src="static/icons8-logo.svg" alt="logo" class="navbar__logo" />Notes
+        </div>
+        
+
+    </header>
+    <main class="main">
+        <div class="container">
+            <section class="left">
+                <h1 >Add Note</h1>
+                <form class="form"  method="POST">
+                   <p class="form__input">
+                    <textarea class="form__textarea" name="note" 
+                    id="note" aria-label="Enter contents" placeholder="Add note here..."  ></textarea>
+                   </p>
+                    <button class="form__submit" type="submit">Save</button>
+                </form>
+            </section>
+            <section class="right bgother">
+                <h1 >Recent Notes</h1>
+                {% if num > 0 %}
+                {% for n in notes %}
+                <article class="note">
+                    <div>
+                        <h2 class="note__title">{{n[0] | truncate(30,True)}}</h2>
+                        <time class="note__time" datetime="{{n[1]}}">| {{n[2]}}</time>
+                    </div>
+                    <p class="note__content">
+                        {{n[0]}}
+                    </p>
+                </article>
+                {% endfor %}
+                {% else %}
+                <h2> no notes ! </h2>
+               
+                {% endif %}
+
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a href="https://github.com/ahmed0484" target="_blank" class="footer__item">Made by Ahmed</a>
+            </section>
+            <section class="right">
+                
+                <div class="footer__column">
+                    <a href="https://github.com/ahmed0484" target="_blank" class="footer__item">About</a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>
